@@ -1,4 +1,14 @@
-bulstem-gem
-===========
+BulStem
+=================
+A Bulgarian stemmer for Ruby
 
-Ruby implementation of Bulgarian stemmer
+Algorithm
+--------------------
+The stemmer is an implementation of Preslav Nakov's [BulStem](http://lml.bas.bg/~nakov/bulstem/index.html) algorithm
+
+Usage
+-----
+```ruby
+stemmer = BulStem.new 'stem_rules_context_1.txt'
+stemmer.stem 'известен'
+```
