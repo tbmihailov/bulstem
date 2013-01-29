@@ -1,3 +1,5 @@
+# encoding: UTF-8
+
 class BulStem
   module Level
     LOW = 1
@@ -10,11 +12,14 @@ class BulStem
 
   @@boundary = 1
 
-  def initialize(level=Level::LOW)
-    load_rules level
+  attr_reader :level
+
+  def initialize(initial_level=Level::LOW)
+    level = initial_level
   end
 
-  def set_level(level)
+  def level=(level)
+    @level = level
     load_rules level
   end
 
