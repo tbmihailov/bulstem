@@ -1,16 +1,8 @@
 class BulStem
-  class Level
-    def self.low
-      1
-    end
-
-    def self.medium
-      2
-    end
-
-    def self.high
-      3
-    end
+  module Level
+    LOW = 1
+    MEDIUM = 2
+    HIGH = 3
   end
 
   VOCALS = /[^аъоуеияю]*[аъоуеияю]/
@@ -18,7 +10,7 @@ class BulStem
 
   @@boundary = 1
 
-  def initialize(level=Level.low)
+  def initialize(level=Level::LOW)
     load_rules level
   end
 
