@@ -14,10 +14,8 @@ class BulStem
 
   attr_reader :level
 
-  def initialize(initial_level=Level::LOW)
-    @rules = {}
-    @level = initial_level
-    load_rules level
+  def initialize(level=Level::LOW)
+    @rules = {} and load level and @level = level
   end
 
   def level=(level)
@@ -34,9 +32,10 @@ class BulStem
 
   private
 
-  def load_rules(level)
+  def load(level)
     @rules = {}
-    File.open "../rules/stem_rules_context_#{level}.txt", 'r:UTF-8' do |file|
+    file_path = File.join File.dirname(File.expand_path(__FILE__)), "../rules/stem_rules_context_#{level}.txt"
+    File.open file_path, 'r:UTF-8' do |file|
       while line = file.gets
         @rules[$1] = $2 if line.chomp.match RULE_PATTERN and $3.to_i > @@boundary
       end

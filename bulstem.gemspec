@@ -10,7 +10,8 @@ Gem::Specification.new do |s|
   	'lib/bulstem.rb',
   	'rules/stem_rules_context_1.txt',
   	'rules/stem_rules_context_2.txt',
-  	'rules/stem_rules_context_3.txt'
+  	'rules/stem_rules_context_3.txt',
+  	'bulstem.gemspec'
   ]
   s.homepage = 'https://github.com/s2gatev/bulstem-gem'
 end
