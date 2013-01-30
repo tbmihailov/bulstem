@@ -8,21 +8,27 @@ The stemmer is an implementation of Preslav Nakov's [BulStem](http://lml.bas.bg/
 
 Levels
 ------
-The stemmer supports 3 levels of stemming - ```LOW```, ```MEDIUM``` and ```HIGH```
+The stemmer supports 3 levels of stemming - ```LOW```(default), ```MEDIUM``` and ```HIGH``` depending on the level of accuracy and errors
+
+Install
+--------------------
+```gem install bulstem```
 
 Usage
 -----
 ```ruby
+require 'bulstem'
+
 # Trivial usage
 stemmer = BulStem.new
-stemmer.stem 'известен'
+stem = stemmer.stem 'известен'
 
 # Setting the stemming level
 stemmer = BulStem.new
-stemmer.set_level BulStem::Level::MEDIUM
-stemmer.stem 'известен'
+stemmer.level = BulStem::Level::MEDIUM
+stem = stemmer.stem 'известен'
 
 # Setting the stemming level in initialization
 stemmer = BulStem.new BulStem::Level::HIGH
-stemmer.stem 'известен'
+stem = stemmer.stem 'известен'
 ```
