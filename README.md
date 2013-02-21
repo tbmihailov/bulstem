@@ -1,21 +1,24 @@
-BulStem
-=================
+# BulStem
+---------
+
 A Bulgarian stemmer for Ruby
 
-Algorithm
---------------------
+## Algorithm
+
 The stemmer is an implementation of Preslav Nakov's [BulStem](http://lml.bas.bg/~nakov/bulstem/index.html) algorithm
 
-Levels
-------
+## Levels
+
 The stemmer supports 3 levels of stemming - ```LOW```(default), ```MEDIUM``` and ```HIGH``` depending on the level of accuracy and errors
 
-Install
---------------------
-```gem install bulstem```
+## Install
 
-Usage
------
+```
+gem install bulstem
+```
+
+## Usage
+
 ```ruby
 require 'bulstem'
 
@@ -32,3 +35,7 @@ stem = stemmer.stem 'известен'
 stemmer = BulStem.new BulStem::Level::HIGH
 stem = stemmer.stem 'известен'
 ```
+
+## Copyright
+
+Copyright (c) 2013 Stanislav Gatev. See LICENSE.txt for further details.
