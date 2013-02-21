@@ -1,17 +1,24 @@
+# -*- encoding: utf-8 -*-
+$:.push File.expand_path("../lib", __FILE__)
+require "bulstem/version"
+
 Gem::Specification.new do |s|
-  s.name = 'bulstem'
-  s.version = '0.0.2'
-  s.date = '2013-01-30'
-  s.summary = "A Bulgarian stemmer for Ruby"
-  s.description = "An implementation of Preslav Nakov's BulStem - inflectional stemming algorithm for Bulgarian language"
-  s.authors = ['Stanislav Gatev']
-  s.email = 's2gatev@gmail.com'
-  s.files = [
-  	'lib/bulstem.rb',
-  	'rules/stem_rules_context_1.txt',
-  	'rules/stem_rules_context_2.txt',
-  	'rules/stem_rules_context_3.txt',
-  	'bulstem.gemspec'
-  ]
-  s.homepage = 'https://github.com/s2gatev/bulstem-gem'
+  s.name        = "bulstem"
+  s.version     = BulStem::VERSION
+  s.platform    = Gem::Platform::RUBY
+  s.authors     = ["Stanislav Gatev"]
+  s.email       = ["s2gatev@gmail.com"]
+  s.homepage = 'https://github.com/s2gatev/bulstem'
+  s.summary     = %q{A Bulgarian stemmer for Ruby}
+  s.description = %q{An implementation of Preslav Nakov's BulStem - inflectional stemming algorithm for Bulgarian language}
+
+  s.add_development_dependency 'rspec'
+  s.add_development_dependency 'open-uri'
+  s.add_dependency 'unicode'
+  s.add_dependency 'robots'
+
+  s.files         = `git ls-files`.split("\n")
+  s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
+  s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
+  s.require_paths = ["lib"]
 end
