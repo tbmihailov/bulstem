@@ -15,7 +15,7 @@ class BulStem
   attr_reader :level
 
   def initialize(level=Level::LOW)
-    @rules = {} and load level and @level = level
+    @rules = {} and load_rules level and @level = level
   end
 
   def level=(level)
@@ -32,7 +32,7 @@ class BulStem
 
   private
 
-  def load(level)
+  def load_rules(level)
     @rules = {}
     file_path = File.dirname(__FILE__) + "/../../rules/stem_rules_context_#{level}.txt"
     File.open file_path, 'r:UTF-8' do |file|

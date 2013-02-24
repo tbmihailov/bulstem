@@ -24,18 +24,21 @@ require 'bulstem'
 
 # Trivial usage
 stemmer = BulStem.new
-stem = stemmer.stem 'известен'
+stemmer.stem 'известен'
+# 'изв'
 
 # Setting the stemming level
 stemmer = BulStem.new
 stemmer.level = BulStem::Level::MEDIUM
-stem = stemmer.stem 'известен'
+stemmer.stem 'известен'
+# 'извест'
 
 # Setting the stemming level in initialization
 stemmer = BulStem.new BulStem::Level::HIGH
-stem = stemmer.stem 'известен'
+stemmer.stem 'известен'
+# 'извест'
 ```
 
 ## Copyright
 
-Copyright (c) 2013 Stanislav Gatev. See LICENSE.txt for further details.
+Copyright (c) 2013 Stanislav Gatev. See LICENSE.rdoc for further details.
